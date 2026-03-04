@@ -207,6 +207,8 @@ body {
 .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .footer__brand { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--alabaster); letter-spacing: .03em; }
 .footer__ministry { font-family: var(--font-body); font-size: .65rem; font-weight: 400; letter-spacing: .15em; text-transform: uppercase; color: rgba(244,241,234,.3); margin-top: 4px; }
+.footer__parish-link { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(166,124,0,.3); transition: color .3s, border-color .3s; }
+.footer__parish-link:hover { color: var(--gold-light); border-color: var(--gold-light); }
 .footer__links { display: flex; gap: 2rem; list-style: none; }
 .footer__links a { font-family: var(--font-body); font-size: .7rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: rgba(244,241,234,.4); text-decoration: none; transition: color .3s, transform .3s; display: inline-block; }
 .footer__links a:hover { color: var(--gold-light); transform: translateY(-1px); }

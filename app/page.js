@@ -1,9 +1,21 @@
+'use client';
+
 import CursorGlow from '@/components/CursorGlow';
 import HeroParticles from '@/components/HeroParticles';
 import ScrollReveal from '@/components/ScrollReveal';
 import EmailSignup from '@/components/EmailSignup';
 
 export default function Home() {
+  const scrollTo = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const nav = document.querySelector('.site-nav');
+      const offset = nav ? nav.offsetHeight + 20 : 80;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       {/* HERO */}
@@ -18,11 +30,11 @@ export default function Home() {
           <h1 className="hero__title">Experience Music that<br /><em>Elevates the Soul</em></h1>
           <p className="hero__subtitle">Escape the noise and immerse yourself in the timeless power of sacred music. Join us for our inaugural concert this Easter season in El Paso.</p>
           <div className="hero__actions">
-            <a href="#event" className="btn btn--primary" onClick={(e) => { e.preventDefault(); const el = document.getElementById('event'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>View Concert Details</a>
-            <a href="#stay-connected" className="btn btn--ghost" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Stay Informed</a>
+            <a href="#event" className="btn btn--primary" onClick={(e) => scrollTo(e, 'event')}>View Concert Details</a>
+            <a href="#stay-connected" className="btn btn--ghost" onClick={(e) => scrollTo(e, 'stay-connected')}>Stay Informed</a>
           </div>
         </div>
-        <a href="#event" className="hero__scroll" onClick={(e) => { e.preventDefault(); const el = document.getElementById('event'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}><span>Discover</span><div className="hero__scroll-line"></div></a>
+        <a href="#event" className="hero__scroll" onClick={(e) => scrollTo(e, 'event')}><span>Discover</span><div className="hero__scroll-line"></div></a>
       </section>
 
       {/* EVENT */}
@@ -53,7 +65,7 @@ export default function Home() {
                     <div className="event__meta-text"><strong>Conductor</strong>Prentice Loftin</div>
                   </div>
                 </div>
-                <a href="#stay-connected" className="btn btn--dark" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Be the First to Know</a>
+                <a href="#stay-connected" className="btn btn--dark" onClick={(e) => scrollTo(e, 'stay-connected')}>Be the First to Know</a>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={2}>
@@ -64,7 +76,7 @@ export default function Home() {
                 <h3 className="event__card-season">Inaugural<br /><em>Concert</em></h3>
                 <div className="event__card-divider"></div>
                 <p className="event__card-venue">St Patrick&apos;s Cathedral<br />El Paso, Texas</p>
-                <div className="event__card-cta"><a href="#stay-connected" className="btn btn--gold-outline" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Join the Waitlist</a></div>
+                <div className="event__card-cta"><a href="#stay-connected" className="btn btn--gold-outline" onClick={(e) => scrollTo(e, 'stay-connected')}>Join the Waitlist</a></div>
               </div>
             </ScrollReveal>
           </div>
