@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import CursorGlow from '@/components/CursorGlow';
 import HeroParticles from '@/components/HeroParticles';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -19,11 +18,11 @@ export default function Home() {
           <h1 className="hero__title">Experience Music that<br /><em>Elevates the Soul</em></h1>
           <p className="hero__subtitle">Escape the noise and immerse yourself in the timeless power of sacred music. Join us for our inaugural concert this Easter season in El Paso.</p>
           <div className="hero__actions">
-            <Link href="/concert" className="btn btn--primary">View Concert Details</Link>
-            <Link href="/connect" className="btn btn--ghost">Stay Informed</Link>
+            <a href="#event" className="btn btn--primary" onClick={(e) => { e.preventDefault(); const el = document.getElementById('event'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>View Concert Details</a>
+            <a href="#stay-connected" className="btn btn--ghost" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Stay Informed</a>
           </div>
         </div>
-        <Link href="/concert" className="hero__scroll"><span>Discover</span><div className="hero__scroll-line"></div></Link>
+        <a href="#event" className="hero__scroll" onClick={(e) => { e.preventDefault(); const el = document.getElementById('event'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}><span>Discover</span><div className="hero__scroll-line"></div></a>
       </section>
 
       {/* EVENT */}
@@ -39,29 +38,33 @@ export default function Home() {
                 <div className="event__meta">
                   <div className="event__meta-item">
                     <svg className="event__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
-                    <div className="event__meta-text"><strong>Date</strong>Easter Season 2026 — Dates to be announced</div>
+                    <div className="event__meta-text"><strong>Date</strong>Saturday, April 12, 2026 at 4:30 PM</div>
                   </div>
                   <div className="event__meta-item">
                     <svg className="event__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                    <div className="event__meta-text"><strong>Venue</strong>El Paso, Texas — Venue details coming soon</div>
+                    <div className="event__meta-text"><strong>Venue</strong>St Patrick&apos;s Cathedral — El Paso, Texas</div>
                   </div>
                   <div className="event__meta-item">
                     <svg className="event__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
-                    <div className="event__meta-text"><strong>Program</strong>Sacred choral masterworks — Full program to be revealed</div>
+                    <div className="event__meta-text"><strong>Program</strong>St Cecilia Mass by Gounod &middot; Ave Maria by Biebl &middot; Ave Maria by Bruckner &middot; Various Motets &amp; Anthems</div>
+                  </div>
+                  <div className="event__meta-item">
+                    <svg className="event__meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                    <div className="event__meta-text"><strong>Conductor</strong>Prentice Loftin</div>
                   </div>
                 </div>
-                <Link href="/connect" className="btn btn--dark">Be the First to Know</Link>
+                <a href="#stay-connected" className="btn btn--dark" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Be the First to Know</a>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={2}>
               <div className="event__card">
                 <div className="event__card-shimmer"></div>
                 <div className="event__card-cross">✦</div>
-                <p className="event__card-date">Easter Season</p>
+                <p className="event__card-date">April 12, 2026 &middot; 4:30 PM</p>
                 <h3 className="event__card-season">Inaugural<br /><em>Concert</em></h3>
                 <div className="event__card-divider"></div>
-                <p className="event__card-venue">St Cecilia Choir &amp; Orchestra<br />El Paso, Texas<br />Spring 2026</p>
-                <div className="event__card-cta"><Link href="/connect" className="btn btn--gold-outline">Join the Waitlist</Link></div>
+                <p className="event__card-venue">St Patrick&apos;s Cathedral<br />El Paso, Texas</p>
+                <div className="event__card-cta"><a href="#stay-connected" className="btn btn--gold-outline" onClick={(e) => { e.preventDefault(); const el = document.getElementById('stay-connected'); if (el) { const nav = document.querySelector('.site-nav'); const offset = nav ? nav.offsetHeight + 20 : 80; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' }); }}}>Join the Waitlist</a></div>
               </div>
             </ScrollReveal>
           </div>
@@ -78,7 +81,7 @@ export default function Home() {
               <p className="about__label">Our Mission</p>
               <h2 className="about__title">Setting the Standard for Choral Excellence in the Borderland</h2>
               <hr className="gold-rule gold-rule--center" data-animate="" />
-              <p className="about__text">The St Cecilia Choir &amp; Orchestra is a ministry of Immaculate Conception, dedicated to honoring and preserving centuries of sacred musical tradition. We unite the region&apos;s finest voices and musicians to deliver performances of unparalleled artistry — right here at home.</p>
+              <p className="about__text">The St Cecilia Choir &amp; Orchestra is a ministry of Immaculate Conception Parish, dedicated to honoring and preserving centuries of sacred musical tradition. We unite the region&apos;s finest voices and musicians to deliver performances of unparalleled artistry — right here at home.</p>
               <p className="about__text">We believe our community deserves consistent, high-caliber arts. Named for the patron saint of musicians, our mission is to be a vital pillar of the cultural life in El Paso and Las Cruces, bringing world-class sacred music to the desert Southwest.</p>
             </div>
           </ScrollReveal>

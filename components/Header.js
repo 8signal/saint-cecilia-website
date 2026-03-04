@@ -30,7 +30,7 @@ export default function Header() {
         <div className="nav-inner">
           <a href="#" className="nav-brand" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }}>
             <span className="nav-brand__name">St Cecilia Choir &amp; Orchestra</span>
-            <span className="nav-brand__tagline">A Ministry of Immaculate Conception</span>
+            <span className="nav-brand__tagline">A Ministry of Immaculate Conception Parish</span>
           </a>
           <ul className={`nav-links${menuOpen ? ' active' : ''}`}>
             <li><a href="#event" onClick={(e) => scrollTo(e, 'event')}>Upcoming Concert</a></li>
